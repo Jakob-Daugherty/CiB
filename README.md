@@ -1,2 +1,2 @@
 # CiB
-Currently in Beta - Testing environment 
+Currently in Beta - Submission environment 
