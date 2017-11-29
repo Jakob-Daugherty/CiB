@@ -1,0 +1,11 @@
+subscribers:
+  - name:   	"obstacle avoidance input"
+	topic:  	"/obstacle_avoidance/cmd_vel"
+	timeout:	0.1
+	priority:   10
+	short_desc: "The obstacle avoidance node signal"
+  - name:   	"Keyboard operation"
+	topic:  	"/mqtt/cmd_vel"
+	timeout:	0.1
+	priority:   9
+publisher:  	"/cmd_vel"

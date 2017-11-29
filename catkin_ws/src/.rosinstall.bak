@@ -1,0 +1,9 @@
+- git:
+    local-name: ca_driver
+    uri: git://github.com/AutonomyLab/create_autonomy.git
+- git:
+    local-name: mqtt_bridge
+    uri: git://github.com/groove-x/mqtt_bridge.git
+- git:
+    local-name: rosbridge_suite
+    uri: git://github.com/RobotWebTools/rosbridge_suite.git

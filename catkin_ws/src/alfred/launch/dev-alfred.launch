@@ -1,0 +1,40 @@
+<launch>
+	<!--
+
+	<arg name="nodelet_manager_name" value="nodelet_manager"/>
+	<arg name="config_file" value="$(find obstacle_avoidance)/param/nodes_priority.yaml" />
+	<node pkg="nodelet" type="nodelet" name="$(arg nodelet_manager_name)" args="manager" />
+	
+	<include file="$(find yocs_cmd_vel_mux)/launch/cmd_vel_mux.launch">
+		<arg name="nodelet_manager_name" value="$(arg nodelet_manager_name)" />
+		<arg name="config_file" value="$(arg config_file)" />
+	</include>
+<node pkg="obstacle_avoidance" type="obstacle_avoidance_node" name="obstacle_avoidance_node" /> 
+	
+	
+	<include file="/home/pi/create_ws/src/create_autonomy/ca_driver/launch/create_1.launch" />
+	-->
+	
+
+	<include file="$(find ca_driver)/launch/create_1.launch"/>
+
+<!--	
+	<node name="turtle_teleop_key" pkg="turtlesim" type="turtle_teleop_key" output="screen" >
+		<remap from="/turtle1/cmd_vel" to="/cmd_vel" />
+	</node>
+-->	
+	<node name="mqtt_bridge" pkg="mqtt_bridge" type="mqtt_bridge_node.py" >
+		<rosparam file="/home/pi/catkin_ws/src/alfred/config/config.yaml" command="load" />
+	</node>
+	
+	
+<!--	
+	<node name="talker" pkg="mqtt_video" type="talker.py" />
+-->	
+	<node name="listener" pkg="mqtt_video" type="listener.py" output="screen" /> 
+
+
+	
+
+	
+</launch>
